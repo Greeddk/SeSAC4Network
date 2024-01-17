@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d00-Ix-cda">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ywz-rz-DPi">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -253,17 +253,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R9N-r5-0MI">
-                                <rect key="frame" x="0.0" y="114" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="R9N-r5-0MI">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="ywz-rz-DPi" id="Njh-eu-bcF"/>
                                 </connections>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q4P-aj-drZ">
-                                <rect key="frame" x="58" y="256" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q4P-aj-drZ">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uTO-nN-rMu">
                                     <size key="itemSize" width="128" height="128"/>
@@ -273,10 +271,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="z3X-rU-cag">
-                                        <rect key="frame" x="56" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ao7-PQ-giR">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -285,8 +283,18 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XQg-Ep-No9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R9N-r5-0MI" firstAttribute="top" secondItem="XQg-Ep-No9" secondAttribute="top" id="8OE-Bt-xED"/>
+                            <constraint firstItem="q4P-aj-drZ" firstAttribute="leading" secondItem="XQg-Ep-No9" secondAttribute="leading" id="94g-m9-E8z"/>
+                            <constraint firstItem="XQg-Ep-No9" firstAttribute="trailing" secondItem="q4P-aj-drZ" secondAttribute="trailing" id="BuX-LV-K79"/>
+                            <constraint firstItem="R9N-r5-0MI" firstAttribute="trailing" secondItem="XQg-Ep-No9" secondAttribute="trailing" id="Dxk-bf-DCk"/>
+                            <constraint firstItem="R9N-r5-0MI" firstAttribute="leading" secondItem="XQg-Ep-No9" secondAttribute="leading" id="SVh-Cl-Z9b"/>
+                            <constraint firstItem="XQg-Ep-No9" firstAttribute="bottom" secondItem="q4P-aj-drZ" secondAttribute="bottom" id="fTx-9w-EWO"/>
+                            <constraint firstItem="q4P-aj-drZ" firstAttribute="top" secondItem="R9N-r5-0MI" secondAttribute="bottom" id="qec-Jm-1Rm"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookCollectionView" destination="q4P-aj-drZ" id="oHV-T5-50t"/>
                         <outlet property="searchBar" destination="R9N-r5-0MI" id="DHX-Gl-Qe1"/>
                     </connections>
                 </viewController>

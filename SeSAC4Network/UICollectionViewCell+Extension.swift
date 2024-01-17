@@ -5,4 +5,11 @@
 //  Created by Greed on 1/17/24.
 //
 
-import Foundation
+import UIKit
+
+extension UICollectionViewCell {
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+}

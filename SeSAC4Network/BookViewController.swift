@@ -48,11 +48,19 @@ struct Meta: Codable {
 class BookViewController: UIViewController {
     
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var bookCollectionView: UICollectionView!
+    
+    var bookList: Book = Book(documents: [Document(authors: [""], contents: "", datetime: "", isbn: "", price: 0, publisher: "", salePrice: 0, status: "", thumbnail: "", title: "", url: "")], meta: Meta(isEnd: false, pageableCount: 0, totalCount: 0)) {
+        didSet {
+            bookCollectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchBar.delegate = self
+        setCollectionView()
     }
     
     func callRequest(keyword: String) {
@@ -69,6 +77,7 @@ class BookViewController: UIViewController {
             case .success(let success):
                 dump(success.documents)
                 
+                self.bookList = success
             case .failure(let failure):
                 print("통신오류")
             }
@@ -77,9 +86,53 @@ class BookViewController: UIViewController {
     }
 }
 
+extension BookViewController {
+    
+    func setCollectionView() {
+        
+        bookCollectionView.delegate = self
+        bookCollectionView.dataSource = self
+        
+        let xib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
+        
+        bookCollectionView.register(xib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
+        
+        let spacing: CGFloat = 10
+        let cellWidth = UIScreen.main.bounds.width - spacing * 3
+        let cellHeight = UIScreen.main.bounds.height - spacing * 3
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        layout.itemSize = CGSize(width: cellWidth / 2, height: cellHeight / 4)
+        
+        bookCollectionView.collectionViewLayout = layout
+    }
+}
+
 extension BookViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         callRequest(keyword: searchBar.text!)
     }
+}
+
+extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let list = bookList.documents
+        return list.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as! BookCollectionViewCell
+        
+        cell.configureCell(item: bookList.documents[indexPath.item])
+        
+        return cell
+    }
+    
 }
