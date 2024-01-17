@@ -55,6 +55,7 @@ class BookViewController: UIViewController {
             bookCollectionView.reloadData()
         }
     }
+    var isSearched: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +69,7 @@ class BookViewController: UIViewController {
         //만약 한글 검색이 안된다면 인코딩 처리
         let query = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        let url = "https://dapi.kakao.com/v3/search/book?query=\(query)&size=10"
+        let url = "https://dapi.kakao.com/v3/search/book?query=\(query)&size=50"
         
         let headers: HTTPHeaders = ["Authorization": APIKey.kakaoAuthor]
         
@@ -77,6 +78,7 @@ class BookViewController: UIViewController {
             case .success(let success):
                 dump(success.documents)
                 
+                self.isSearched = true
                 self.bookList = success
             case .failure(let failure):
                 print("통신오류")
@@ -130,8 +132,9 @@ extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as! BookCollectionViewCell
         
-        cell.configureCell(item: bookList.documents[indexPath.item])
-        
+        if isSearched {
+            cell.configureCell(item: bookList.documents[indexPath.item])
+        }
         return cell
     }
     

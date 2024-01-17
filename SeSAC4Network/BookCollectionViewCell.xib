@@ -22,44 +22,46 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVv-uh-OFf">
-                        <rect key="frame" x="16" y="20" width="48" height="24"/>
+                        <rect key="frame" x="16" y="12" width="211" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONk-Ga-78Y">
-                        <rect key="frame" x="16" y="215" width="33" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <rect key="frame" x="16" y="213" width="103" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4h3-uL-2Ii">
-                        <rect key="frame" x="135" y="60" width="92" height="199"/>
+                        <rect key="frame" x="139" y="60" width="100" height="199"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="92" id="XjD-6I-dow"/>
+                            <constraint firstAttribute="width" constant="100" id="XjD-6I-dow"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="LVv-uh-OFf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6YC-Xb-jp4"/>
-                    <constraint firstAttribute="trailing" secondItem="4h3-uL-2Ii" secondAttribute="trailing" constant="16" id="Bne-h0-0Ep"/>
+                    <constraint firstAttribute="trailing" secondItem="4h3-uL-2Ii" secondAttribute="trailing" constant="4" id="Bne-h0-0Ep"/>
                     <constraint firstAttribute="trailing" secondItem="wsM-8f-Z4T" secondAttribute="trailing" id="OXm-wG-dXu"/>
                     <constraint firstItem="wsM-8f-Z4T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="T24-rH-XtU"/>
                     <constraint firstAttribute="bottom" secondItem="4h3-uL-2Ii" secondAttribute="bottom" id="WOE-2p-oEF"/>
+                    <constraint firstAttribute="trailing" secondItem="LVv-uh-OFf" secondAttribute="trailing" constant="16" id="bHm-gc-dEf"/>
                     <constraint firstItem="ONk-Ga-78Y" firstAttribute="leading" secondItem="LVv-uh-OFf" secondAttribute="leading" id="boL-ys-tWR"/>
+                    <constraint firstItem="4h3-uL-2Ii" firstAttribute="leading" secondItem="ONk-Ga-78Y" secondAttribute="trailing" constant="20" id="ebD-xN-BWu"/>
                     <constraint firstItem="4h3-uL-2Ii" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="60" id="jR4-wj-MPw"/>
                     <constraint firstAttribute="bottom" secondItem="wsM-8f-Z4T" secondAttribute="bottom" id="kVv-EL-fdU"/>
-                    <constraint firstItem="LVv-uh-OFf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="pt5-a2-Tca"/>
+                    <constraint firstItem="LVv-uh-OFf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="pt5-a2-Tca"/>
                     <constraint firstAttribute="bottom" secondItem="ONk-Ga-78Y" secondAttribute="bottom" constant="28" id="yL8-FU-QfD"/>
                     <constraint firstItem="wsM-8f-Z4T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zld-JT-5Kw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="authorLabel" destination="ONk-Ga-78Y" id="GPS-WM-sUq"/>
                 <outlet property="backView" destination="wsM-8f-Z4T" id="5oV-v7-CAJ"/>
                 <outlet property="bookImageView" destination="4h3-uL-2Ii" id="2aJ-O9-ppe"/>
                 <outlet property="nameLabel" destination="LVv-uh-OFf" id="5IB-Pn-u29"/>
-                <outlet property="rateLabel" destination="ONk-Ga-78Y" id="GPS-WM-sUq"/>
             </connections>
             <point key="canvasLocation" x="70.992366412213741" y="64.436619718309856"/>
         </tableViewCell>
