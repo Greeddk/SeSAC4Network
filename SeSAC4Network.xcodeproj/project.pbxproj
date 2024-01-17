@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		425815942B56218C00A5373D /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425815932B56218C00A5373D /* MarketViewController.swift */; };
 		425815962B56577C00A5373D /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425815952B56577C00A5373D /* LottoAPIManager.swift */; };
+		429C31152B576AEC00681E83 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429C31142B576AEC00681E83 /* BookViewController.swift */; };
+		429C31172B576C7300681E83 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 429C31162B576C7300681E83 /* .gitignore */; };
 		42E303382B5611BA007025C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E303372B5611BA007025C2 /* AppDelegate.swift */; };
 		42E3033A2B5611BA007025C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E303392B5611BA007025C2 /* SceneDelegate.swift */; };
 		42E3033C2B5611BA007025C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E3033B2B5611BA007025C2 /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		425815932B56218C00A5373D /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
 		425815952B56577C00A5373D /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
+		429C31142B576AEC00681E83 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		429C31162B576C7300681E83 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		42E303342B5611BA007025C2 /* SeSAC4Network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC4Network.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E303372B5611BA007025C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42E303392B5611BA007025C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +52,7 @@
 		42E3032B2B5611BA007025C2 = {
 			isa = PBXGroup;
 			children = (
+				429C31162B576C7300681E83 /* .gitignore */,
 				42E303362B5611BA007025C2 /* SeSAC4Network */,
 				42E303352B5611BA007025C2 /* Products */,
 			);
@@ -67,6 +72,7 @@
 				42E303372B5611BA007025C2 /* AppDelegate.swift */,
 				42E303392B5611BA007025C2 /* SceneDelegate.swift */,
 				42E3033B2B5611BA007025C2 /* ViewController.swift */,
+				429C31142B576AEC00681E83 /* BookViewController.swift */,
 				42E3033D2B5611BA007025C2 /* Main.storyboard */,
 				425815932B56218C00A5373D /* MarketViewController.swift */,
 				42E3034E2B56128E007025C2 /* LottoViewController.swift */,
@@ -142,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				429C31172B576C7300681E83 /* .gitignore in Resources */,
 				42E303442B5611BC007025C2 /* LaunchScreen.storyboard in Resources */,
 				42E303412B5611BC007025C2 /* Assets.xcassets in Resources */,
 				42E3033F2B5611BA007025C2 /* Main.storyboard in Resources */,
@@ -158,6 +165,7 @@
 				42E3033C2B5611BA007025C2 /* ViewController.swift in Sources */,
 				42E3034F2B56128E007025C2 /* LottoViewController.swift in Sources */,
 				425815942B56218C00A5373D /* MarketViewController.swift in Sources */,
+				429C31152B576AEC00681E83 /* BookViewController.swift in Sources */,
 				42E303382B5611BA007025C2 /* AppDelegate.swift in Sources */,
 				42E3033A2B5611BA007025C2 /* SceneDelegate.swift in Sources */,
 				425815962B56577C00A5373D /* LottoAPIManager.swift in Sources */,

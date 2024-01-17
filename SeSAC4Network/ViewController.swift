@@ -34,8 +34,7 @@ class ViewController: UIViewController {
             "X-Naver-Client-Id": "myfXUBmrlHZulEVs3kTJ",
             "X-Naver-Client-Secret": "ah27uLISNx"]
         
-        AF.request(url, method: .post, parameters: parameters, headers: headers).responseDecodable(decoder: <#T##DataDecoder#>) { response in
-            <#code#>
+        AF.request(url, method: .post, parameters: parameters, headers: headers)
         }
     }
 
